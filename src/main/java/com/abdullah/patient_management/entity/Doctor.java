@@ -1,6 +1,10 @@
 package com.abdullah.patient_management.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -9,6 +13,12 @@ import java.util.List;
  * @author Abdullah Riyadh
  * @date 4/9/26
  */
+@Entity
+@Table(name = "doctors")
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
