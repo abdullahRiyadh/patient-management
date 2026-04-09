@@ -1,4 +1,4 @@
-package com.abdulah.patient_management;
+package com.abdullah.patient_management;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
