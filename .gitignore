@@ -13,6 +13,8 @@ target/
 # Spring Boot
 *.log
 application-local.properties
+application.properties
+*.log
 
 # OS
 .DS_Store
