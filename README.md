@@ -108,6 +108,100 @@ Swagger UI: `http://localhost:8080/swagger-ui.html`
 
 ---
 
+## Usage Example
+
+### 1. Register a user
+```bash
+POST /api/auth/register
+{
+  "username": "admin",
+  "email": "admin@hospital.com",
+  "password": "admin123",
+  "role": "ADMIN"
+}
+```
+
+### 2. Login and copy the token
+```bash
+POST /api/auth/login
+{
+  "username": "admin",
+  "password": "admin123"
+}
+```
+
+### 3. Use the token in all subsequent requests
+```
+Authorization: <your_jwt_token>
+```
+
+### 4. Create a patient
+```bash
+POST /api/patients
+{
+  "firstName": "Rahim",
+  "lastName": "Uddin",
+  "email": "rahim@example.com",
+  "phone": "01712345678",
+  "dateOfBirth": "1990-05-15",
+  "gender": "MALE",
+  "address": "Dhaka, Bangladesh"
+}
+```
+
+### 5. Add a doctor
+```bash
+POST /api/doctors
+{
+  "firstName": "Farida",
+  "lastName": "Hossain",
+  "email": "dr.farida@hospital.com",
+  "specialization": "Cardiology",
+  "qualification": "MBBS, MD",
+  "licenseNumber": "BMDC-12345",
+  "available": true
+}
+```
+
+### 6. Book an appointment
+```bash
+POST /api/appointments
+{
+  "patientId": 1,
+  "doctorId": 1,
+  "appointmentDate": "2026-04-20",
+  "appointmentTime": "10:00",
+  "reason": "Chest pain checkup"
+}
+```
+
+---
+
+## Roles & Permissions
+
+| Role | Patients | Doctors | Appointments |
+|------|----------|---------|--------------|
+| ADMIN | Full access | Full access | Full access |
+| DOCTOR | Read/Write | Read only | Full access |
+| RECEPTIONIST | Full access | Read/Write | Full access |
+
+---
+
+## Key Features
+
+- **JWT Authentication** — Stateless, token-based security
+- **Role-Based Access Control** — Three roles with distinct permissions
+- **Input Validation** — All request fields validated with meaningful error messages
+- **Global Exception Handling** — Consistent error response structure across all endpoints
+- **Conflict Detection** — Prevents double-booking a doctor at the same time slot
+- **Patient Search** — Full-text search across name, email, and phone
+- **Optimized Queries** — Custom JPQL queries for search and slot-checking
+- **Swagger UI** — Interactive API documentation
+
+---
+
+
+
 ## Author
 
 **Abdullah Riyadh** — Software Engineer (Backend – Java)
