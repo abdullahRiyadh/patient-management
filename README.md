@@ -145,7 +145,8 @@ POST /api/patients
   "phone": "01712345678",
   "dateOfBirth": "1990-05-15",
   "gender": "MALE",
-  "address": "Dhaka, Bangladesh"
+  "address": "Dhaka, Bangladesh",
+  "medicalHistory": "Chest Pain"
 }
 ```
 
@@ -156,6 +157,7 @@ POST /api/doctors
   "firstName": "Farida",
   "lastName": "Hossain",
   "email": "dr.farida@hospital.com",
+  "phone": "01712345679",
   "specialization": "Cardiology",
   "qualification": "MBBS, MD",
   "licenseNumber": "BMDC-12345",
@@ -171,7 +173,8 @@ POST /api/appointments
   "doctorId": 1,
   "appointmentDate": "2026-04-20",
   "appointmentTime": "10:00",
-  "reason": "Chest pain checkup"
+  "reason": "Chest pain checkup",
+  "notes": "Urgent"
 }
 ```
 
