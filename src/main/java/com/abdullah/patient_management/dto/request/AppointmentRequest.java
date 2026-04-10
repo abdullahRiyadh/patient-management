@@ -1,6 +1,7 @@
-package com.abdullah.patient_management.dto;
+package com.abdullah.patient_management.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
